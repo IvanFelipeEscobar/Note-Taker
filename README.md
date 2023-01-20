@@ -5,3 +5,7 @@
 The purpose of this app is to demonstrate using express. js via node to route different aspects of a front end application in a back end server.
 
 [app deployed with Heroku](https://note-taker-challenge.herokuapp.com/)
+
+![Note Taker app](./screenShot.png)
+
+

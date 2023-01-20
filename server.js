@@ -12,8 +12,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use(express.static(`public`));
-//api routes
+//api routes:
 app.get('/api/notes', (req, res) => res.json(notes));
+
 app.post(`/api/notes`, (req, res) => {
     const title = req.body.title
     const text = req.body.text
@@ -26,6 +27,7 @@ app.post(`/api/notes`, (req, res) => {
     fs.writeFile(`./db/db.json`, JSON.stringify(notes), (err) => err ? console.error(err) : console.log(`db updated`))
     res.json(notes)
 })
+//delete iterate through array toad find unique id matching the selected delete item through query parameters
 app.delete(`/api/notes/:id`, (req, res) => {
     notes.forEach((note) => {
         if (note.id === req.params.id) {
